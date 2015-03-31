@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container" id="personal-app">
+        <script type="text/x-handlebars" data-template-name="application">
+            <header class="navbar navbar-default navbar-fixed-top" role="banner">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#" style="color:lightskyblue"><i class="fa fa-desktop" style="color:lightskyblue"></i> mark_dickinson</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>{{#link-to 'coding'}}Coding{{/link-to}}</li>
+                            <li>{{#link-to 'gamecoding'}}Games{{/link-to}}</li>
+                            <li>{{#link-to 'dancing'}}Dancing{{/link-to}}</li>
+                            <li>{{#link-to 'music'}}Music{{/link-to}}</li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <p class="navbar-text"><a href="http://facebook.com/"><i class="fa fa-facebook-official fa-2x" style="color:gray"></i></a></p>
+                            <p class="navbar-text"><a href="http://twitter.com/"><i class="fa fa-twitter fa-2x" style="color:gray"></i></a></p>
+                            <p class="navbar-text"><a href="https://www.linkedin.com/pub/mark-dickinson/9/315/63b"><i class="fa fa-linkedin fa-2x" style="color:gray"></i></a></p>
+                            <p class="navbar-text"><a href="https://github.com/dickinsonmr1"><i class="fa fa-github fa-2x" style="color:gray"></i></i></a></p>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div class="container" id="mainContent">
+                <div class="row">
+                    <div>
+                        {{outlet}}
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-default navbar-fixed-bottom">
+                <div class="container">
+                    <ul class="nav nav-justified">
+                        <p class="navbar-text">Powered by <a href="http://emberjs.com">Ember.js</a> | <a href="http://getbootstrap.com/">Bootstrap</a> | <a href="http://fontawesome.io">Font Awesome</a></p>
+                    </ul>
+                    <!--<p class="navbar-text">Powered by <a href="http://emberjs.com"><span class="glyphicon glyphicon-fire" aria-hidden="true" />Ember.js</a></p>-->
+                    <!--<ul class="nav navbar-nav navbar-right">
+                        <p class="navbar-text"><a href="http://facebook.com/mark.dickinson"><i class="fa fa-facebook-official fa-2x" style="color:gray"></i></a></p>
+                        <p class="navbar-text"><a href="http://twitter.com/mark_dickinson"><i class="fa fa-twitter fa-2x" style="color:gray"></i></a></p>
+                        <p class="navbar-text"><a href="https://www.linkedin.com/pub/mark-dickinson/9/315/63b"><i class="fa fa-linkedin fa-2x" style="color:gray"></i></a></p>
+                        <p class="navbar-text"><a href="https://github.com/dickinsonmr1"><i class="fa fa-github fa-2x" style="color:gray"></i></i></a></p>
+                    </ul>-->
+                </div>
+            </nav>
+        </script>
+    </div>
+
+    <!-- INDEX TEMPLATE -->
+    <script type="text/x-handlebars" data-template-name="index">
+        <div class="jumbotron">
+            <div class="container">
+                <h1><i class="fa fa-home fa-2x pull-left fa-border" style="color:gray"></i></h1>
+                <h1>Mark Dickinson</h1>
+                <br />
+                <p class="text-muted">"Doing stuff since 1987." (Me)</p>
+                <h4>
+                    <span class="label label-info">#code</span>
+                    <span class="label label-info">#dancing</span>
+                    <span class="label label-info">#music</span>
+                </h4>
+            </div>
+        </div>
+        <h1>About</h1>
+        <hr />
+        <p><i class="fa fa-rocket fa-3x pull-left fa-border"></i>Mark Dickinson is a software developer located near Philadelphia, PA.</p>
+
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="coding">
+        <!--<div class="row">-->
+        <div class="jumbotron">
+            <div class="container">
+                <h1><i class="fa fa-code fa-2x pull-left fa-border" style="color:gray"></i></h1>
+                <h1>Coding</h1>
+                <br />
+                <p class="text-muted">"The best thing about a boolean is even if you are wrong, you are only off by a bit." (Anonymous)</p>
+                <h4>
+                    <span class="label label-info">#development</span>
+                    <span class="label label-info">#dotnet</span>
+                    <span class="label label-info">#github</span>
+                </h4>
+            </div>
+        </div>
+        <h1>Programming</h1>
+        <hr />
+        <p><i class="fa fa-terminal fa-3x pull-left fa-border"></i>Mark has been coding various things since 2000. He graduated from Grove City College in 2009 with a BS in Computer Science, and has since worked as a software engineer in the healthcare and pharmaceutical industries. As of 2015, he is primarily a .NET developer (C#, ASP.NET 4+) who is expanding further into web and mobile development.</p>
+        <br />
+        <h1>GitHub</h1>
+        <hr />
+        <div>
+            <div class="panel">
+                <p class="text-left">
+                    {{#link-to 'index'}}<img {{bind-attr src=avatar_url}} style="width:140px" />{{/link-to}}
+                </p>
+                <h4>{{#link-to 'index'}}{{name}}{{/link-to}}</h4>
+                <p>
+                    {{location}}</br>
+                </p>
+                <hr />
+                <table class="table table-striped">
+                    <tr><td>Followers: </td><td>{{followers}}</td></tr>
+                    <tr><td>Repositories: </td><td>{{public_repos}}</td></tr>
+                    <tr><td>Joined: </td><td>{{created_at}}</td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-8">
+            {{outlet}}
+        </div>
+    </script>
+
+<script type="text/x-handlebars" data-template-name="gamecoding">
+        <div class="panel">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1><i class="fa fa-gamepad fa-2x pull-left fa-border" style="color:gray"></i></h1>
+                    <h1>Game Coding</h1>
+                    <br />
+                    <p class="text-muted">"You have to learn the rules of the game. And then you have to play better than anyone else." (Albert Einstein)</p>
+                    <h4>
+                        <span class="label label-info">#xna</span>
+                        <span class="label label-info">#csharp</span>
+                        <span class="label label-info">#monogame</span>
+                    </h4>
+                </div>
+            </div>
+            <div class="container">
+                <h1>Games</h1>
+                <hr />
+                <p><i class="fa fa-fighter-jet fa-3x pull-left fa-border"></i>Mark has been a hobbyist game developer ever since he started programming many years ago.  Through side projects and group projects in college alike, he spent several years writing games in XNA and is still sad that Microsoft killed XNA. Oh, the humanity!</p>
+                <br />
+                <br />
+            </div>
+            <div class="panel panel-default">
+                <!--<div class="panel-heading"><h3>Game Projects</h3></div>-->
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Game</th>
+                            <th>Year</th>
+                            <th>Genre</th>
+                            <th>Technology</th>
+                            <th>Platform</th>
+                            <th>URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each}}
+                        <tr>
+                            <td><h4>{{name}}</h4></td>
+                            <td>{{year}}</td>
+                            <td>{{genre}}</td>
+                            <td>{{technology}}</td>
+                            <td>{{platform}}</td>
+                            <td>
+                                <a {{bind-attr href=url}} class="btn btn-success" id="downloadgame" value="Download">
+                                    <span class="glyphicon glyphicon-download"></span> Download
+                                </a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr />
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="music">
+        <div class="panel">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1><i class="fa fa-volume-up fa-2x pull-left fa-border" style="color:gray"></i></h1>
+                    <h1>Music</span></h1>
+                    <br />
+                    <p class="text-muted">"Where words fail, music speaks." (Hans Christian Andersen)</p>
+                    <h4>
+                        <span class="label label-info">#piano</span>
+                        <span class="label label-info">#composition</span>
+                        <span class="label label-info">#piano</span>
+                        <span class="label label-info">#m9band</span>
+                    </h4>
+                </div>
+            </div>
+            <h1>Personal</h1>
+            <hr />
+            <p><i class="fa fa-microphone fa-3x pull-left fa-border"></i>Mark is a classically-trained pianist and has enjoyed playing and composing music since childhood. In college, Mark was a accompanist for music majors and was a founding member of a band (M9). These days, Mark plays the occassional wedding ceremony or reception for friends and composes piano music as a hobby.  He draws inspiration from artists such as Ben Folds.</p>
+            <br />
+            <div class="panel panel-default">
+                <!--<div class="panel-heading"><h3>Personal Songs</h3></div>-->
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Song</th>
+                            <th>Year</th>
+                            <th>Genre</th>
+                            <th>Download</th>
+                            <th>Stream</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each}}
+                        <tr>
+                            <td>
+                                <h4>{{name}}</h4>
+                            </td>
+                            <td>{{year}}</td>
+                            <td>
+                                <p class="text-muted">{{genre}}</p>
+                            </td>
+                            <td>
+                                <a {{bind-attr href=url}} class="btn btn-success" id="sendchat" value="Download">
+                                    <span class="glyphicon glyphicon-download"></span> Download
+                                </a>
+                            </td>
+                            <td>
+                                <a {{bind-attr href=url}} class="btn btn-info" id="info" value="SendChat">
+                                    <span class="glyphicon glyphicon-play-circle"></span> Stream
+                                </a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+
+            <h1>The Band: M9</h1>
+            <hr />
+            <p><i class="fa fa-microphone fa-3x pull-left fa-border"></i>M9 is a pop/rock band founded at Grove City College in September 2005. Drawing inspiration from many artists and styles, the members of M9 have written original material and have covered selected songs by artists such as Ben Folds, John Mayer, Oasis, Train, and Semisonic. Mark and Jason wrote M9's first song in a stairwell of the Memorial men's dormitory early in their freshman year, and Doug sooned joined them. Music was made, fun was had, and hearts were touched, forever. After cycling through several drummers, the band welcomed the supremely talented Ramon Correa in 2007. While at Grove City College, M9 performed at local campus events and developed a small but ravenous following. Active until their college graduation in May 2009, the band founders briefly reunited in August 2012 to play a wedding reception gig. This website lives on as a tribute to what was and what could have been; it also conveniently provides Mark a good excuse to practice web design skills. All of M9's songs are available as free downloads on the music page.</p>
+            <br />
+            <div class="panel panel-default">
+                <!--<div class="panel-heading"><h3>M9 Songs</h3></div>-->
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Song</th>
+                            <th>Year</th>
+                            <th>Genre</th>
+                            <th>Download</th>
+                            <th>Stream</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each}}
+                        <tr>
+                            <td>
+                                <h4>{{name}}</h4>
+                            </td>
+                            <td>{{year}}</td>
+                            <td>
+                                <p class="text-muted">{{genre}}</p>
+                            </td>
+                            <td>
+                                <a {{bind-attr href=url}} class="btn btn-success" id="sendchat" value="Download">
+                                    <span class="glyphicon glyphicon-download"></span> Download
+                                </a>
+                            </td>
+                            <td>
+                                <a {{bind-attr href=url}} class="btn btn-info" id="info" value="SendChat">
+                                    <span class="glyphicon glyphicon-play-circle"></span> Stream
+                                </a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <hr />
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="dancing">
+        <div class="jumbotron">
+            <div class="container">
+                <h1><i class="fa fa-fire fa-2x pull-left fa-border" style="color:gray"></i></h1>
+                <h1>Dancing</h1>
+                <br />
+                <p class="text-muted">"So the darkness shall be the light, and the stillness the dancing." (T.S. Eliot)</p>
+                <h4>
+                    <span class="label label-info">#jitterbug</span>
+                    <span class="label label-info">#lindyhop</span>
+                    <span class="label label-info">#balboa</span>
+                    <span class="label label-info">#charleston</span>
+                    <span class="label label-info">#collegiateshag</span>
+                </h4>
+            </div>
+        </div>
+        <!--<div class="panel">
+            <h1><i class="fa fa-heartbeat fa-2x pull-left fa-border"></i>Swing Dancing</h1>
+            <p class="text-muted">"So the darkness shall be the light, and the stillness the dancing." (T.S. Eliot)</p>
+            <h4>
+                <span class="label label-info">#jitterbug</span>
+                <span class="label label-info">#lindyhop</span>
+                <span class="label label-info">#balboa</span>
+                <span class="label label-info">#charleston</span>
+                <span class="label label-info">#collegiateshag</span>
+            </h4>
+        </div>-->
+
+        <div class="container">
+            <h2>About</h2>
+            <hr />
+            <p><i class="fa fa-street-view fa-3x pull-left fa-border"></i>Mark has enjoyed swing dancing since first being introduced to it at Grove City College in 2005. These days, he is a regular at Swing Kat Entertainment in Pottstown, PA.</p>
+
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="resume">
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="contact">
+    </script>
+
+    <script src="js/libs/jquery-1.11.2.min.js"></script>
+    <script src="js/libs/handlebars-v1.3.0.js"></script>
+    <script src="js/libs/ember.js"></script>
+    <script src="js/libs/ember-data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/router.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style type="text/css">
+        .body {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .jumbotron {
+            /*background: lightblue;*/
+        }
+        .fa-cog {
+            color: black;
+        }
+        .widewrapper {
+            width: 100%;
+        }
+        .widewrapper > img {
+            width: 100%;
+        }
+        .navbar-brand {
+            /*position: absolute;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            margin: auto;*/
+        }
+    </style>
+</body>
+
+</html>
