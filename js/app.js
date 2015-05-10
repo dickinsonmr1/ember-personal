@@ -2,6 +2,11 @@
     rootElement: "#personal-app"
 });
 
+// http://guides.emberjs.com/v1.10.0/templates/binding-element-attributes/
+Ember.LinkView.reopen({
+    attributeBindings: ['data-toggle', 'data-target']
+});
+
 var games = [
     { id: "1", name: "Aerial Assault", url: "http://m9band.com", genre: "Arcade", description: "x", year: "2001", technology: "QBasic", platform: "Zune" },
     { id: "2", name: "Planetary Assault", url: "http://m9band.com", genre: "Arcade", description: "x", year: "2006", technology: "VB6", platform: "Windows" },
